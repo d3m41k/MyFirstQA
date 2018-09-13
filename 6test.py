@@ -14,8 +14,7 @@ class RegisterTest (unittest.TestCase):
         self.driver.maximize_window()
 
     @file_data("name.json")
-    @file_data("phone.json")
-    def test_by_product(self, name, phone):
+    def test_by_product(self, name):
 
 
         self.driver.get("https://petroline.ua/")
@@ -23,7 +22,7 @@ class RegisterTest (unittest.TestCase):
         self.driver.find_element_by_href("product/nasosy/dc-tech_p45").click()
         self.driver.find_element_by_class_name("order-button").click()
         self.driver.find_element_by_id("name").send_keys(name)
-        self.driver.find_element_by_id("phone").send_keys(phone)
+        self.driver.find_element_by_id("phone").send_keys(name)
         self.driver.find_element_by_class_name("ui blue submit button center").click()
 
 
